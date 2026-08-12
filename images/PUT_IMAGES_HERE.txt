@@ -1,0 +1,17 @@
+Drop your image files into this folder using these exact filenames — the site
+will automatically pick them up (no code changes needed). Until a file is
+present, that spot shows a neat placeholder so the site still looks complete.
+
+  why-ish-info-professional.jpg   Home page — "Why ISH Info" section photo
+  about-classroom.jpg             About page — classroom / computer lab photo
+  about-students.jpg              About page — students on campus photo
+  admissions-legacy-process.jpg   Admissions page — problem section image
+  client-campus-story.jpg         Clients page — featured success story photo
+
+Recommended size: at least 1200px on the longest side, JPG or PNG.
+
+Institution logos and the ISH Info logo itself were intentionally built as
+styled text badges instead of real images, since using another institution's
+logo/trademark needs their permission first (the source content document
+flags this too). If you get permission and real logo files later, they can
+be swapped in easily — just ask.
