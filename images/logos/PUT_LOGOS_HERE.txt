@@ -1,0 +1,17 @@
+Drop official institution logo files into this folder using these exact
+filenames — the homepage "Institutions That Trust ISH Info" section will
+automatically pick them up. Until a file is present for an institution, that
+spot falls back to a styled initials badge, so the section still looks
+complete either way.
+
+  symbiosis.png       Symbiosis International Deemed University
+  mica.png             MICA — Mudra Institute of Communications, Ahmedabad
+  mnlu.png              Maharashtra National Law University
+  crescent.png         Crescent University, Chennai
+  mit-shillong.png     MIT University, Shillong
+
+Recommended: transparent-background PNG, at least 200px tall.
+
+Only add a logo once you have that institution's permission to use their
+trademark on this site — the source content document flags this requirement
+too.

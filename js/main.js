@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".main-nav");
   var scrim = document.querySelector(".nav-scrim");
+  var closeBtn = document.querySelector(".nav-close");
 
   function openNav() {
     nav.classList.add("open");
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     scrim.addEventListener("click", closeNav);
   }
+  if (closeBtn) closeBtn.addEventListener("click", closeNav);
 
   /* ---------- Dropdown (Solutions) — click toggle for touch/mobile, hover handled by CSS on desktop ---------- */
   document.querySelectorAll(".nav-item-dropdown > .nav-link").forEach(function (link) {

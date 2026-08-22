@@ -10,8 +10,9 @@ present, that spot shows a neat placeholder so the site still looks complete.
 
 Recommended size: at least 1200px on the longest side, JPG or PNG.
 
-Institution logos and the ISH Info logo itself were intentionally built as
-styled text badges instead of real images, since using another institution's
-logo/trademark needs their permission first (the source content document
-flags this too). If you get permission and real logo files later, they can
-be swapped in easily — just ask.
+Institution logos are wired up to display real images once you have them —
+see images/logos/PUT_LOGOS_HERE.txt for filenames. Until those files exist,
+each institution falls back to a styled initials badge automatically, so the
+site still looks complete. Using another institution's logo/trademark needs
+their permission first (the source content document flags this too) — get
+that sign-off before dropping the files in.
