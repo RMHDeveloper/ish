@@ -507,14 +507,15 @@ button.btn { border: 2px solid transparent; }
 .attrib-role { font-size: 12px; color: var(--ink-500); }
 
 /* ---------- Logo strip ---------- */
-.logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 34px; }
+.logo-strip { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 14px 20px; overflow-x: auto; padding-bottom: 4px; }
 .inst-logo {
   display: flex; align-items: center; gap: 10px;
-  padding: 12px 18px;
+  padding: 12px 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--white);
-  min-width: 190px;
+  min-width: 150px;
+  flex: none;
 }
 .inst-logo .mark {
   width: 40px; height: 40px; border-radius: 8px; flex: none;
