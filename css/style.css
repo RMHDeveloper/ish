@@ -601,7 +601,7 @@ button.btn { border: 2px solid transparent; }
 .client-card p.desc { font-size: 13.5px; color: var(--ink-500); }
 
 /* Success story */
-.story-panel { background: var(--bg-alt); border-radius: var(--radius-lg); padding: 36px; }
+.story-panel { background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: var(--radius-lg); padding: 36px; }
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
 @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; } }
 .story-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--border); padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700; color: var(--blue-700); margin-bottom: 18px; }
