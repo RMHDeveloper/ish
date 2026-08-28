@@ -25,7 +25,7 @@
   --ink-300: #d0d5dd;
   --ink-100: #eef1f5;
   --white: #ffffff;
-  --bg-alt: #c99ac6;
+  --bg-alt: #7d3f79;
   --bg-alt-2: #fef8fd;
   --border: #e1e8f0;
   --radius-sm: 8px;
@@ -78,6 +78,42 @@ section { position: relative; }
 .bg-alt { background: var(--bg-alt); }
 .bg-white { background: var(--white); }
 .bg-navy { background: linear-gradient(135deg, var(--blue-700), var(--blue-800)); color: var(--white); }
+
+/* --bg-alt is now a deep purple, so text sitting directly on .bg-alt / .cta-band
+   sections must be light. Cards keep their own (light-card / dark-text) styling. */
+.bg-alt, .cta-band { color: rgba(255, 255, 255, 0.86); }
+.bg-alt .section-title, .cta-band .section-title,
+.bg-alt .family-head h2, .bg-alt .col-copy h2, .bg-alt .col-copy h3,
+.bg-alt .trust-row h4, .bg-alt .story-panel h3,
+.bg-alt .card-link, .cta-band .card-link,
+.bg-alt .col-copy .kicker {
+  color: var(--white);
+}
+.bg-alt .section-sub, .cta-band p, .bg-alt .family-sub,
+.bg-alt .col-copy p, .bg-alt .trust-row p, .bg-alt .value-quote,
+.bg-alt .story-panel p, .bg-alt .story-list, .bg-alt .info-row .val {
+  color: rgba(255, 255, 255, 0.82);
+}
+.bg-alt .eyebrow, .cta-band .eyebrow {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.18);
+}
+.bg-alt .trust-row .ic { background: rgba(255, 255, 255, 0.16); color: var(--white); }
+.bg-alt .story-panel { background: rgba(255, 255, 255, 0.10); }
+.bg-alt .story-tag { background: rgba(255, 255, 255, 0.16); color: var(--white); border-color: rgba(255, 255, 255, 0.25); }
+.bg-alt .btn-outline-blue, .cta-band .btn-outline-blue {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--white);
+}
+.bg-alt .btn-outline-blue:hover, .cta-band .btn-outline-blue:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--white);
+}
+.bg-alt .btn-ghost-link, .cta-band .btn-ghost-link { color: rgba(255, 255, 255, 0.92); }
+.bg-alt .impact-num, .bg-alt .impact-label { color: var(--white); }
+.bg-alt .impact-sub { color: rgba(255, 255, 255, 0.8); }
+.bg-alt .stat-num { color: var(--white); }
+.bg-alt .stat-label { color: rgba(255, 255, 255, 0.8); }
 
 /* ---------- Typography ---------- */
 .eyebrow {
