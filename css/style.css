@@ -110,6 +110,7 @@ section { position: relative; }
   border-color: var(--white);
 }
 .bg-alt .btn-ghost-link, .cta-band .btn-ghost-link { color: rgba(255, 255, 255, 0.92); }
+.bg-alt .family-head h2 span { color: rgba(255, 255, 255, 0.72); }
 .bg-alt .impact-num, .bg-alt .impact-label { color: var(--white); }
 .bg-alt .impact-sub { color: rgba(255, 255, 255, 0.8); }
 .bg-alt .stat-num { color: var(--white); }
@@ -720,28 +721,96 @@ button.btn { border: 2px solid transparent; }
 .chip-icon { width: 15px; height: 15px; color: var(--blue-600); }
 
 /* ========================================================================
-   Alternate colour scheme — dark blue (toggled by the on-page switcher)
+   Alternate colour scheme — the original dark-blue theme.
+   Default (no attribute) is the purple scheme; the on-page switcher adds
+   [data-theme="blue"] to <html> to restore this original palette + treatment.
    ======================================================================== */
 [data-theme="blue"] {
-  --blue-900: #17264a;
-  --blue-800: #21386e;
-  --blue-700: #2f4f96;
-  --blue-600: #4272c0;
-  --blue-500: #6c9ae8;
-  --blue-100: #e7effb;
-  --blue-50:  #f3f7fd;
-  --bg-alt:   #21386e;
+  --blue-900: #0e2c5c;
+  --blue-800: #123e82;
+  --blue-700: #16479a;
+  --blue-600: #1a56b0;
+  --blue-500: #2563c9;
+  --blue-100: #e4eefc;
+  --blue-50:  #eef4fc;
+  --orange-600: #db6f0f;
+  --orange-500: #f5821f;
+  --orange-100: #fdeadb;
+  --bg-alt:   #eaf2fb;
+  --bg-alt-2: #f7fafd;
 }
-[data-theme="blue"] .btn-primary { background: #2f62c2; box-shadow: 0 6px 16px rgba(17, 40, 90, 0.34); }
-[data-theme="blue"] .btn-primary:hover { background: #21488f; box-shadow: 0 10px 22px rgba(17, 40, 90, 0.44); }
-[data-theme="blue"] .cta-band { background: #1b2f5c; }
-[data-theme="blue"] .card,
-[data-theme="blue"] .card.bg-white,
-[data-theme="blue"] .card.bg-alt {
-  background: linear-gradient(160deg, #f4f8fe, #e2ecfb) padding-box,
+
+/* Buttons */
+[data-theme="blue"] .btn-primary { background: var(--orange-500); box-shadow: 0 6px 16px rgba(245, 130, 31, 0.32); }
+[data-theme="blue"] .btn-primary:hover { background: var(--orange-600); box-shadow: 0 10px 22px rgba(245, 130, 31, 0.4); }
+[data-theme="blue"] .btn-outline-blue { border-color: var(--blue-600); color: var(--blue-600); }
+[data-theme="blue"] .btn-outline-blue:hover { background: var(--blue-600); color: var(--white); }
+
+/* Cards — white fill with hue-rotated gradient borders */
+[data-theme="blue"] .card {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
               linear-gradient(135deg, var(--blue-500), var(--blue-700)) border-box;
 }
-[data-theme="blue"] .card-icon.orange { color: #2f4f96; }
+[data-theme="blue"] .card.bg-white { background: var(--white); border: 1px solid var(--border); }
+[data-theme="blue"] .card.bg-alt { background: var(--bg-alt); border: 1px solid var(--border); }
+[data-theme="blue"] .grid-cards .card:nth-child(4n+2):not(.bg-white):not(.bg-alt) {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+              linear-gradient(135deg, var(--teal-500), var(--teal-600)) border-box;
+}
+[data-theme="blue"] .grid-cards .card:nth-child(4n+3):not(.bg-white):not(.bg-alt) {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+              linear-gradient(135deg, var(--violet-500), var(--violet-600)) border-box;
+}
+[data-theme="blue"] .grid-cards .card:nth-child(4n+4):not(.bg-white):not(.bg-alt) {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+              linear-gradient(135deg, var(--orange-500), var(--orange-600)) border-box;
+}
+[data-theme="blue"] .card-icon { background: var(--blue-100); color: var(--blue-600); }
+[data-theme="blue"] .card-icon.orange { background: var(--orange-100); color: var(--orange-600); }
+
+/* Alt sections are pale again — undo the deep-purple light-text treatment */
+[data-theme="blue"] .cta-band { background: var(--bg-alt); }
+[data-theme="blue"] .bg-alt,
+[data-theme="blue"] .cta-band { color: var(--ink-700); }
+[data-theme="blue"] .bg-alt .section-title,
+[data-theme="blue"] .cta-band .section-title,
+[data-theme="blue"] .bg-alt .family-head h2,
+[data-theme="blue"] .bg-alt .col-copy h2,
+[data-theme="blue"] .bg-alt .col-copy h3,
+[data-theme="blue"] .bg-alt .trust-row h4,
+[data-theme="blue"] .bg-alt .story-panel h3,
+[data-theme="blue"] .bg-alt .impact-label { color: var(--ink-900); }
+[data-theme="blue"] .bg-alt .section-sub,
+[data-theme="blue"] .cta-band p,
+[data-theme="blue"] .bg-alt .family-sub,
+[data-theme="blue"] .bg-alt .col-copy p,
+[data-theme="blue"] .bg-alt .trust-row p,
+[data-theme="blue"] .bg-alt .value-quote,
+[data-theme="blue"] .bg-alt .story-panel p,
+[data-theme="blue"] .bg-alt .story-list,
+[data-theme="blue"] .bg-alt .info-row .val,
+[data-theme="blue"] .bg-alt .impact-sub,
+[data-theme="blue"] .bg-alt .family-head h2 span { color: var(--ink-500); }
+[data-theme="blue"] .bg-alt .col-copy .kicker,
+[data-theme="blue"] .bg-alt .card-link,
+[data-theme="blue"] .cta-band .card-link,
+[data-theme="blue"] .bg-alt .btn-ghost-link,
+[data-theme="blue"] .cta-band .btn-ghost-link { color: var(--blue-600); }
+[data-theme="blue"] .bg-alt .impact-num { color: var(--blue-700); }
+[data-theme="blue"] .bg-alt .eyebrow,
+[data-theme="blue"] .cta-band .eyebrow { color: var(--blue-600); background: var(--blue-100); }
+[data-theme="blue"] .bg-alt .trust-row .ic { background: var(--blue-100); color: var(--blue-600); }
+[data-theme="blue"] .bg-alt .story-panel,
+[data-theme="blue"] .story-panel { background: var(--bg-alt); }
+[data-theme="blue"] .bg-alt .story-tag { background: var(--white); color: var(--blue-700); border-color: var(--border); }
+[data-theme="blue"] .bg-alt .btn-outline-blue,
+[data-theme="blue"] .cta-band .btn-outline-blue { border-color: var(--blue-600); color: var(--blue-600); }
+[data-theme="blue"] .bg-alt .btn-outline-blue:hover,
+[data-theme="blue"] .cta-band .btn-outline-blue:hover { background: var(--blue-600); color: var(--white); }
+[data-theme="blue"] .bg-alt + .cta-band,
+[data-theme="blue"] .cta-band + .bg-alt,
+[data-theme="blue"] .bg-alt + .bg-alt,
+[data-theme="blue"] .cta-band + .cta-band { border-top: none; }
 
 /* ---------- Theme switcher control ---------- */
 .theme-switch {
@@ -774,7 +843,7 @@ button.btn { border: 2px solid transparent; }
 }
 .theme-switch button .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
 .theme-switch button[data-set="purple"] .dot { background: linear-gradient(135deg, #ca68c4, #7d3f79); }
-.theme-switch button[data-set="blue"] .dot { background: linear-gradient(135deg, #4272c0, #17264a); }
+.theme-switch button[data-set="blue"] .dot { background: linear-gradient(135deg, #2563c9, #0e2c5c); }
 .theme-switch button.active { background: var(--ink-900); color: #fff; }
 @media (max-width: 560px) {
   .theme-switch { bottom: 12px; right: 12px; }
