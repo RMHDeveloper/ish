@@ -44,6 +44,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  /* Close any open dropdown on outside click, Escape, or scroll (prevents a stuck-open panel) */
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-item-dropdown")) {
+      document.querySelectorAll(".nav-item-dropdown.open").forEach(function (el) {
+        el.classList.remove("open");
+      });
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".nav-item-dropdown.open").forEach(function (el) {
+        el.classList.remove("open");
+      });
+    }
+  });
+
   /* Close mobile nav when a real link is followed */
   document.querySelectorAll(".main-nav a:not(.nav-item-dropdown > .nav-link)").forEach(function (a) {
     a.addEventListener("click", function () {
