@@ -1,3 +1,48 @@
+/* ---------- Colour theme switcher (purple default / dark-blue alternate) ---------- */
+(function () {
+  var KEY = "ish-theme";
+  var stored;
+  try { stored = localStorage.getItem(KEY); } catch (e) {}
+  var current = stored === "blue" ? "blue" : "purple";
+
+  function apply(theme) {
+    current = theme === "blue" ? "blue" : "purple";
+    if (current === "blue") document.documentElement.setAttribute("data-theme", "blue");
+    else document.documentElement.removeAttribute("data-theme");
+    try { localStorage.setItem(KEY, current); } catch (e) {}
+    var sw = document.querySelector(".theme-switch");
+    if (sw) {
+      sw.querySelectorAll("button").forEach(function (b) {
+        var on = b.getAttribute("data-set") === current;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+  }
+
+  // Apply as early as possible to limit any flash
+  apply(current);
+
+  function build() {
+    if (document.querySelector(".theme-switch")) return;
+    var wrap = document.createElement("div");
+    wrap.className = "theme-switch";
+    wrap.setAttribute("role", "group");
+    wrap.setAttribute("aria-label", "Colour theme");
+    wrap.innerHTML =
+      '<button type="button" data-set="purple"><span class="dot"></span>Purple</button>' +
+      '<button type="button" data-set="blue"><span class="dot"></span>Blue</button>';
+    wrap.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () { apply(b.getAttribute("data-set")); });
+    });
+    document.body.appendChild(wrap);
+    apply(current);
+  }
+
+  if (document.body) build();
+  else document.addEventListener("DOMContentLoaded", build);
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
   /* ---------- Mobile nav toggle ---------- */
   var toggle = document.querySelector(".nav-toggle");

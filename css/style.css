@@ -718,3 +718,66 @@ button.btn { border: 2px solid transparent; }
 
 /* stream chip icons row */
 .chip-icon { width: 15px; height: 15px; color: var(--blue-600); }
+
+/* ========================================================================
+   Alternate colour scheme — dark blue (toggled by the on-page switcher)
+   ======================================================================== */
+[data-theme="blue"] {
+  --blue-900: #17264a;
+  --blue-800: #21386e;
+  --blue-700: #2f4f96;
+  --blue-600: #4272c0;
+  --blue-500: #6c9ae8;
+  --blue-100: #e7effb;
+  --blue-50:  #f3f7fd;
+  --bg-alt:   #21386e;
+}
+[data-theme="blue"] .btn-primary { background: #2f62c2; box-shadow: 0 6px 16px rgba(17, 40, 90, 0.34); }
+[data-theme="blue"] .btn-primary:hover { background: #21488f; box-shadow: 0 10px 22px rgba(17, 40, 90, 0.44); }
+[data-theme="blue"] .cta-band { background: #1b2f5c; }
+[data-theme="blue"] .card,
+[data-theme="blue"] .card.bg-white,
+[data-theme="blue"] .card.bg-alt {
+  background: linear-gradient(160deg, #f4f8fe, #e2ecfb) padding-box,
+              linear-gradient(135deg, var(--blue-500), var(--blue-700)) border-box;
+}
+[data-theme="blue"] .card-icon.orange { color: #2f4f96; }
+
+/* ---------- Theme switcher control ---------- */
+.theme-switch {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 300;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(6px);
+}
+.theme-switch button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-500);
+  padding: 7px 13px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1;
+}
+.theme-switch button .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.theme-switch button[data-set="purple"] .dot { background: linear-gradient(135deg, #ca68c4, #7d3f79); }
+.theme-switch button[data-set="blue"] .dot { background: linear-gradient(135deg, #4272c0, #17264a); }
+.theme-switch button.active { background: var(--ink-900); color: #fff; }
+@media (max-width: 560px) {
+  .theme-switch { bottom: 12px; right: 12px; }
+  .theme-switch button { padding: 6px 10px; font-size: 11px; }
+}
+@media print { .theme-switch { display: none; } }
